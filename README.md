@@ -13,5 +13,5 @@ El proyecto está divido en 2 partes, app-backend y app-frontend. El proyecto ba
 
 <ol>
 <li>Node JS</li>
-Descargar el instalador en la pagina <a href="https://nodejs.org/en/"> NodeJs</a> la última version 
+Descargar el instalador en la pagina <a href="https://nodejs.org/en/"> NodeJs</a> la última versión. No requiere ninguna configuracion especial. Para ver la instalación en detalle, ver este video <a href="https://www.youtube.com/watch?v=eeb4IJLKLaY"> Instalar NodeJs</a> 
 </ol>
