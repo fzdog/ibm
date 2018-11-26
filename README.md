@@ -27,7 +27,7 @@ Descargar el instalador en la pagina <a href="https://nodejs.org/en/"> NodeJs</a
 Para instalar Angular, solo basta con seguir el paso a paso de la instalación de la página oficial. <a href="https://angular.io/guide/quickstart"> Instalar Angular</a> 
 
 <li><h3>Corriendo el servidor de Aplicaciones de Angular</h3></li>
-En la consola de comandos, ir a la ruta base del proyecto frontend (app-frontend) y ejecutar "npm install", con esto se dará inicio a la instalacion de las dependencias. Una vez finalizado, ejecutaremos el comando "ng serve", al finalizar, podremos acceder al backend a través de la ruta http://localhost:4200/app/banking-advisor
+En la consola de comandos, ir a la ruta base del proyecto frontend (app-frontend) y ejecutar "npm install", con esto se dará inicio a la instalacion de las dependencias Nota: Esta instalación puede tomar un tiempo en completarse. Una vez finalizado, ejecutaremos el comando "ng serve", al finalizar, podremos acceder al backend a través de la ruta http://localhost:4200/app/banking-advisor
 <li></li>
 
 
