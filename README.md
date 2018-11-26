@@ -33,4 +33,5 @@ En la consola de comandos, ir a la ruta base del proyecto frontend (app-frontend
 
 </ol>
 
-
+<h3>Notas</h3>
+La ruta base para el consumo de los servicios REST es:http://localhost:<puerto>/ibm/services
