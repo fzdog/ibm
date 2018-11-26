@@ -1,0 +1,46 @@
+<form (ngSubmit)="onSave(form)" #form="ngForm" id="dataForm">
+
+    <div class="card no-border-shadow">
+
+        <div class="card-body">
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <label for="cardNumberTxt">Número Tarjeta</label>
+                    <input id="cardNumberTxt" name="cardNumber" ngModel maxlength="16" type="text" class="form-control"
+                        [(ngModel)]="card.cardNumber" required>
+
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <label for="ccvTxt">CCV</label>
+                    <input id="ccvTxt" name="ccv" type="text" maxlength="4" class="form-control" [(ngModel)]="card.ccv"
+                        required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <label for="typeTxt">Tipo</label>
+                    <input id="typeTxt" type="text" name="city" maxlength="30" class="form-control" [(ngModel)]="card.type">
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-right">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <button type="submit" *ngIf="!isEditing" class="btn btn-lg btn-primary pull-right">
+                        <i class="fas fa-save" aria-hidden="true"></i> Guardar
+                    </button>
+
+                    <button type="submit" *ngIf="isEditing" class="btn btn-lg btn-primary pull-right">
+                        <i class="fas fa-save" aria-hidden="true"></i> Actualizar
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <div [ngClass]="{'alert-success':mostrarMensajeOk,'alert-danger':mostrarMensajeError}" class="alert " *ngIf="mostrarMensajeError || mostrarMensajeOk">
+            <strong>{{mensajeResultado}}</strong>
+        </div>
+    </div>
+</form>

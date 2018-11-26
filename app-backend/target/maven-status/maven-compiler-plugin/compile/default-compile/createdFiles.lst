@@ -1,0 +1,9 @@
+com\ibm\test\entities\Client.class
+com\ibm\test\restservices\FtoCService.class
+com\ibm\test\entities\BankingAdvisor.class
+com\ibm\test\entities\CardHistory.class
+com\ibm\test\services\ClientService.class
+com\ibm\test\objects\Person.class
+com\ibm\database\ConnectionDB.class
+com\ibm\test\entities\Card.class
+com\test\ibm\utils\FillDB.class

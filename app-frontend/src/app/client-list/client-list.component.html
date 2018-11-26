@@ -1,0 +1,86 @@
+<form>
+  <div class="card shadow-sm p-3 mb-5 bg-white rounded">
+    <div class="card-body">
+      <div [ngClass]="{'alert-success':mostrarMensajeOk,'alert-danger':mostrarMensajeError}" class="alert " *ngIf="mostrarMensajeError || mostrarMensajeOk">
+        <strong>{{mensajeResultado}}</strong>
+      </div>
+      <h4 class="card-title">Clientes <button type="button" class="btn btn-primary float-right" data-toggle="modal"
+          (click)="createNew()"><i class="fa fa-plus"></i>
+          Agregar</button></h4>
+      <div class="table-responsive">
+
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Nombre</th>
+              <th scope="col">Direccion</th>
+              <th scope="col">Ciudad</th>
+              <th scope="col">Telefono</th>
+              <th scope="col">Historial Consumos</th>
+              <th scope="col">Editar</th>
+              <th scope="col">Eliminar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let client of clients">
+              <td>{{client.name}}</td>
+              <td>{{client.address}}</td>
+              <td>{{client.city}}</td>
+              <td>{{client.phone}}</td>
+              <td class="text-center"><a class="btn btn-primary" [routerLink]="['cards',client.id]"><i class="fa fa-clipboard-list"></i></a></td>
+              <td class="text-center"><button type="button" class="btn btn-secondary"  (click)="onEdit(client)" ><i class="fa fa-edit"></i></button></td>
+              <td class="text-center"><button type="button" class="btn btn-danger" href="#deleteModal" (click)="selectObject(client)"
+                  data-toggle="modal" data-target="#deleteModal"><i class="fa fa-trash"></i></button></td>
+            </tr>
+
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Eliminar Registro</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+              <p><span class="text-danger font-weight-bold">Atención: Si elimina el cliente, también eliminará los registros de las tarjetas y los historiales asociados</span></p>
+              <p>¿Confirma que desea eliminar este registro?</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-lg btn-default" (click)="closeDeleteModal()">
+            <i class="fas fa-close" aria-hidden="true"></i> Cancelar</button>
+          <button type="button" class="btn btn-lg btn-danger" (click)="deleteClient()">
+            <i class="fas fa-trash" aria-hidden="true"></i> Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+
+<div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nuevo Registro</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <new-client-list [isEditing]="isEditing" [clientId]="clientId"  (onSaved)="saved($event)"></new-client-list>
+      </div>
+    </div>
+  </div>
+</div>

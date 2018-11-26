@@ -1,0 +1,48 @@
+<form (ngSubmit)="onSave(form)" #form="ngForm" id="dataForm">
+
+    <div class="card no-border-shadow">        
+
+        <div class="card-body">
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <label for="nameTxt">Nombre</label>
+                    <input id="nameTxt" name="name" ngModel maxlength="50" type="text" class="form-control" [(ngModel)]="client.name" required>
+                    
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <label for="direccionTxt">Dirección</label>
+                    <input id="direccionTxt" name="address"  type="text"  maxlength="100" class="form-control" [(ngModel)]="client.address" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <label for="cityTxt">Ciudad</label>
+                    <input id="cityTxt" type="text" name="city"   maxlength="30" class="form-control" [(ngModel)]="client.city">
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <label for="phoneTxt">Teléfono</label>
+                    <input id="phoneTxt" type="text" name="phone"  maxlength="20" class="form-control" [(ngModel)]="client.phone">
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-right">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <button type="submit" *ngIf="!isEditing" class="btn btn-lg btn-primary pull-right">
+                        <i class="fas fa-save" aria-hidden="true"></i> Guardar
+                    </button>
+
+                    <button type="submit" *ngIf="isEditing" class="btn btn-lg btn-primary pull-right">
+                        <i class="fas fa-save" aria-hidden="true"></i> Actualizar
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <div [ngClass]="{'alert-success':mostrarMensajeOk,'alert-danger':mostrarMensajeError}" class="alert " *ngIf="mostrarMensajeError || mostrarMensajeOk">
+            <strong>{{mensajeResultado}}</strong>
+        </div>
+    </div>
+</form>
