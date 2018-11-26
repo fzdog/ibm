@@ -5,17 +5,17 @@
 El proyecto está divido en 2 partes, app-backend y app-frontend. El proyecto backend está desarrollado en Eclipse con Maven y el frontend con Angular6. A continuación se relacionan mas específicamente los requisitos técnicos:
 
 <ul>
-<li>APP-BACKEND</li>
+<li><h3>APP-BACKEND</h3></li>
 -JDK Java7, Eclipse, Servidor de Aplicaciones (Apache Tomcat 7 preferiblemente)
   
-<ol>
+
 <li><h3>Corre el proyecto</h3></li>
 
 Importar el proyecto en eclipse, hacer clean al proyecto. Luego hacer en la consola de comandos de maven, ejecutar "mvn clean" "mvn install". Luego correr el proyecto en el servidor web
-</ol>
+
 
   
-<li>APP FRONTEND</li>
+<li><h3>APP FRONTEND</h3></li>
 -NodeJS 9, Angular CLI, Angular 6, Editor de código cualquiera (recomendado Visual Studio Code)
 </ul>
 
