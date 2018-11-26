@@ -6,7 +6,7 @@ El proyecto está divido en 2 partes, app-backend y app-frontend. El proyecto ba
 
 <ul>
 <li><h3>APP-BACKEND</h3></li>
--JDK Java7, Eclipse, Servidor de Aplicaciones (Apache Tomcat 7 preferiblemente)
+-JDK Java7, Eclipse, Servidor de Aplicaciones (Apache Tomcat 7 preferiblemente), Hibernate JPA,  La base de datos es Derby In-Memory con 3 registros iniciales con la información de las otras tablas relacionadas
   
 
 <li><h3>Corre el proyecto</h3></li>
